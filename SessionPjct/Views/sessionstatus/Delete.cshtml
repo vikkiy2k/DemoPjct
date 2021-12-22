@@ -1,0 +1,41 @@
+﻿@model SessionPjct.sessionstatu
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div style="padding-top:40px">
+    <h4 style="color:chocolate">Please check the details before delete</h4>
+</div>
+<hr />
+<br>
+<div>
+    <div style="padding-top:20px;padding-left:120px">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StatusName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StatusName)
+                
+            </dd>
+
+        </dl>
+    </div>
+    <br>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row" style="padding-left:120px;padding-top:10px">
+            <div class="col-2" >
+                <button type="submit" value="Delete" class="btn btn-danger">Delete</button>
+            </div>
+            <div class="col-2">
+                <strong class="btn btn-outline-info">  @Html.ActionLink("Back to List", "Index")</strong>
+            </div>
+        </div>
+
+
+    }
+</div>

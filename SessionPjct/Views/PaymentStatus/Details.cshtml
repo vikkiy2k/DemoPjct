@@ -1,0 +1,32 @@
+﻿@model SessionPjct.PaymentStatu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div style="padding-top:20px">
+    <h4 style="color:chocolate">Details on PaymentStatus</h4>
+    <hr />
+</div>
+
+<div class="container-fluid" style="padding-top:20px;padding-left:90px">
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusName)
+        </dd>
+
+    </dl>
+</div>
+<div class="row" style="padding-top:20px;padding-left:90px">
+    <div class="col-2">
+        <strong class="btn btn-warning"> @Html.ActionLink("ClickToEdit", "Edit", new { id = Model.PaymentStatusId })</strong>
+    </div>
+    <div class="col-2">
+        <strong class="btn btn-info">  @Html.ActionLink("Back to List", "Index")</strong>
+    </div>
+</div>

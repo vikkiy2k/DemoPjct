@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SessionDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PaymentStatu">
+    <Key>
+      <PropertyRef Name="PaymentStatusId" />
+    </Key>
+    <Property Name="PaymentStatusId" Type="Int32" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Name="SessionId" Type="Int32" Nullable="false" />
+    <Property Name="SessionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SessionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SessionStart" Type="Int32" Nullable="false" />
+    <Property Name="SessionEnd" Type="Int32" Nullable="false" />
+    <Property Name="SessionAmount" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="SessionCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sessionstatu">
+    <Key>
+      <PropertyRef Name="SessionStatusId" />
+    </Key>
+    <Property Name="SessionStatusId" Type="Int32" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SessionTrxn">
+    <Key>
+      <PropertyRef Name="SessionTrnId" />
+    </Key>
+    <Property Name="SessionTrnId" Type="Int32" Nullable="false" />
+    <Property Name="SessionId" Type="Int32" Nullable="false" />
+    <Property Name="MentorId" Type="Int32" Nullable="false" />
+    <Property Name="CandidateId" Type="Int32" Nullable="false" />
+    <Property Name="SessionStatus" Type="Int32" Nullable="false" />
+    <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="SessionCount" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="SessionDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatu" />
+    <EntitySet Name="Sessions" EntityType="Self.Session" />
+    <EntitySet Name="sessionstatus" EntityType="Self.sessionstatu" />
+    <EntitySet Name="SessionTrxns" EntityType="Self.SessionTrxn" />
+  </EntityContainer>
+</Schema>

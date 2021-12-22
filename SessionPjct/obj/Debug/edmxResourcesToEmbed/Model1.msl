@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SessionDBModelStoreContainer" CdmEntityContainer="SessionDBEntities">
+    <EntitySetMapping Name="PaymentStatus">
+      <EntityTypeMapping TypeName="SessionDBModel.PaymentStatu">
+        <MappingFragment StoreEntitySet="PaymentStatus">
+          <ScalarProperty Name="PaymentStatusId" ColumnName="PaymentStatusId" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sessions">
+      <EntityTypeMapping TypeName="SessionDBModel.Session">
+        <MappingFragment StoreEntitySet="Session">
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+          <ScalarProperty Name="SessionDate" ColumnName="SessionDate" />
+          <ScalarProperty Name="SessionStart" ColumnName="SessionStart" />
+          <ScalarProperty Name="SessionEnd" ColumnName="SessionEnd" />
+          <ScalarProperty Name="SessionAmount" ColumnName="SessionAmount" />
+          <ScalarProperty Name="SessionCount" ColumnName="SessionCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sessionstatus">
+      <EntityTypeMapping TypeName="SessionDBModel.sessionstatu">
+        <MappingFragment StoreEntitySet="sessionstatus">
+          <ScalarProperty Name="SessionStatusId" ColumnName="SessionStatusId" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionTrxns">
+      <EntityTypeMapping TypeName="SessionDBModel.SessionTrxn">
+        <MappingFragment StoreEntitySet="SessionTrxn">
+          <ScalarProperty Name="SessionTrnId" ColumnName="SessionTrnId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="MentorId" ColumnName="MentorId" />
+          <ScalarProperty Name="CandidateId" ColumnName="CandidateId" />
+          <ScalarProperty Name="SessionStatus" ColumnName="SessionStatus" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="SessionCount" ColumnName="SessionCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

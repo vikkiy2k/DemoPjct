@@ -1,0 +1,102 @@
+﻿@model SessionPjct.SessionTrxn
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div>
+    <div style="padding-top:20px">
+        <h4 style="color:chocolate">Please check the details before you gonna delete</h4><br>
+    </div>
+
+
+    <div class="row" style="padding-left:20px">
+        <div class="col-2">
+            <h5>TransactionInfo</h5>
+        </div>
+
+        <div class="col-2">
+            <strong class="btn btn-outline-info">
+                @Html.ActionLink("Back to List", "Index")
+            </strong>
+        </div>
+    </div>
+
+    <hr />
+    <br>
+    <div class="row" style="padding-left:60px">
+        <div class="col-3">
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SessionId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SessionId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MentorId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MentorId)
+                </dd>
+
+
+            </dl>
+        </div>
+        <div class="col-3">
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CandidateId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CandidateId)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SessionCount)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SessionCount)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-3">
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SessionStatus)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SessionStatus)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaymentStatus)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PaymentStatus)
+                </dd>
+
+
+
+            </dl>
+        </div>
+    </div>
+    <br>
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div style="padding-left:30%">
+            <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+        </div>
+    }
+</div>

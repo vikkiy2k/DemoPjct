@@ -1,0 +1,94 @@
+﻿@model SessionPjct.SessionTrxn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div style="padding-top:50px">
+    <h2 style="color:chocolate">Details</h2>
+</div>
+<hr />
+<div>
+    <div class="row" style="padding-left:60px;padding-top:20px">
+        <div class="col-3">
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SessionId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SessionId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MentorId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MentorId)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-3">
+            <dl>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CandidateId)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CandidateId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SessionStatus)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SessionStatus)
+                </dd>
+
+
+            </dl>
+        </div>
+        <div class="col-3">
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaymentStatus)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PaymentStatus)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SessionCount)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SessionCount)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="row" style="padding-bottom:50px">
+        <div class="col-2">
+
+        </div>
+        <div class="col-2 ">
+            <strong class="btn btn-outline-warning">
+                @Html.ActionLink("ClickToEdit", "Edit", new { id = Model.SessionTrnId })
+            </strong>
+        </div>
+        <div class="col-2 ">
+            <strong class="btn btn-outline-info">
+                @Html.ActionLink("Back to List", "Index")
+            </strong>
+        </div>
+    </div>
+</div>
+<p>
+    |
+    
+</p>

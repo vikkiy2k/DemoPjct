@@ -1,0 +1,44 @@
+﻿@model SessionPjct.sessionstatu
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div style="padding-top:20px">
+    <h4 style="color:chocolate">Modify the sessionstatus</h4>
+    <hr />
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br>
+    <div class="form-horizontal" style="padding-left:80px">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SessionStatusId)
+        
+        <div class="form-group"><b>
+            @Html.LabelFor(model => model.StatusName, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StatusName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StatusName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div style="padding-top:20px">
+                <button type="submit" value="Save" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div style="padding-top:50px;padding-left:70px">
+    <strong class="btn btn-outline-info">
+    @Html.ActionLink("Back to List", "Index")</strong>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

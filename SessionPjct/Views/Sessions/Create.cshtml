@@ -1,0 +1,119 @@
+﻿@model SessionPjct.Session
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container-fluid">
+   
+    <div class="row" style="padding-top:20px">
+        <div class="col-5">
+            <h4 style="color:chocolate;padding-left:50px">Enter Session records here</h4>
+        </div> 
+        <div class="col-2" style="padding-left:15px">
+            <strong class="btn btn-outline-info"> @Html.ActionLink("Back to List", "Index")</strong>
+
+        </div>
+    </div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="container-fluid">
+    
+
+
+    <hr />
+    
+
+    <div class="row">
+        <div class="col-md-5" style="padding-left:10%">
+            <div class="form-group">
+
+                @*<label for="SessionID"><b>SessionID</b></label>
+                    <input type="number" class="form-control" id="SID" placeholder="Eg.123">*@
+
+                <strong>  @Html.LabelFor(model => model.SessionId, new { @class = "control-label col-md-2" }) </strong>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SessionId, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+            </div>
+            <br>
+            <div class="form-group">
+                <strong>  @Html.LabelFor(model => model.SessionName, htmlAttributes: new { @class = "control-label col-md-2" }) </strong>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SessionName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SessionName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <strong>  @Html.LabelFor(model => model.SessionDate, htmlAttributes: new { @class = "control-label col-md-2" }) </strong>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SessionDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SessionDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <strong>   @Html.LabelFor(model => model.SessionStart, htmlAttributes: new { @class = "control-label col-md-2" }) </strong>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SessionStart, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SessionStart, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <strong>   @Html.LabelFor(model => model.SessionEnd, htmlAttributes: new { @class = "control-label col-md-2 text-dark" })</strong>
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SessionEnd, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SessionEnd, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <strong>   @Html.LabelFor(model => model.SessionAmount, htmlAttributes: new { @class = "control-label col-md-2 text-dark" }) </strong>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SessionAmount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SessionAmount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <strong>   @Html.LabelFor(model => model.SessionCount, htmlAttributes: new { @class = "control-label col-md-2 text-dark" }) </strong>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SessionCount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SessionCount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="padding-top:10px">
+                    <button type="submit" class="btn btn-success" onclick="redirect()"><b>Create</b></button>
+                    @*<input type="submit" value="Create" class="btn btn-default" />*@
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+
+
+    </div>
+
+
+
+</div>
+    }
+    
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

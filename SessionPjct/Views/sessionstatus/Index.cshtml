@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SessionPjct.sessionstatu>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" style="padding-top:20px">
+    <div class="col-2">
+    <h4 style="color:chocolate">Index</h4></div>
+
+    <div class="col-2">
+       <strong class="btn btn-outline-warning"> @Html.ActionLink("Create New", "Create")
+           </strong></div>
+    
+</div>
+<hr>
+<br>
+<div class="container">
+    <table class="table table-hover">
+        <tr style="background-color:yellowgreen" class="text-white">
+            <th>
+               @Html.DisplayNameFor(model => model.StatusName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                <b> <i>   @Html.DisplayFor(modelItem => item.StatusName)</i></b>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SessionStatusId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SessionStatusId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SessionStatusId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SessionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PaymentStatus">
+    <Key>
+      <PropertyRef Name="PaymentStatusId" />
+    </Key>
+    <Property Name="PaymentStatusId" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Name="SessionId" Type="int" Nullable="false" />
+    <Property Name="SessionName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SessionDate" Type="datetime" Nullable="false" />
+    <Property Name="SessionStart" Type="int" Nullable="false" />
+    <Property Name="SessionEnd" Type="int" Nullable="false" />
+    <Property Name="SessionAmount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="SessionCount" Type="int" />
+  </EntityType>
+  <EntityType Name="sessionstatus">
+    <Key>
+      <PropertyRef Name="SessionStatusId" />
+    </Key>
+    <Property Name="SessionStatusId" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SessionTrxn">
+    <Key>
+      <PropertyRef Name="SessionTrnId" />
+    </Key>
+    <Property Name="SessionTrnId" Type="int" Nullable="false" />
+    <Property Name="SessionId" Type="int" Nullable="false" />
+    <Property Name="MentorId" Type="int" Nullable="false" />
+    <Property Name="CandidateId" Type="int" Nullable="false" />
+    <Property Name="SessionStatus" Type="int" Nullable="false" />
+    <Property Name="PaymentStatus" Type="int" Nullable="false" />
+    <Property Name="SessionCount" Type="int" />
+  </EntityType>
+  <EntityContainer Name="SessionDBModelStoreContainer">
+    <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Session" EntityType="Self.Session" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sessionstatus" EntityType="Self.sessionstatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionTrxn" EntityType="Self.SessionTrxn" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,99 @@
+﻿@model SessionPjct.Session
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col" style="padding-top:15px">
+                <h3 style="color:chocolate">Modify the existing information</h3>
+            </div>
+            <div class="col" style="padding-top:15px">
+                <strong class="btn btn-outline-info"> @Html.ActionLink("Back to List", "Index")</strong>
+            </div>
+
+        </div>
+        @*<h4>Session</h4>*@
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SessionId)
+        <br>
+        <div class="row" style="padding-left:80px">
+            <div class="col-4">
+                <div class="form-group">
+                    <b>@Html.LabelFor(model => model.SessionName, htmlAttributes: new { @class = "control-label col-md-2" })</b>  
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SessionName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SessionName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br>
+                <div class="form-group"><b>
+                    @Html.LabelFor(model => model.SessionDate, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SessionDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SessionDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br>
+                <div class="form-group"><b>
+                    @Html.LabelFor(model => model.SessionStart, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SessionStart, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SessionStart, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group"><b>
+                    @Html.LabelFor(model => model.SessionEnd, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SessionEnd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SessionEnd, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br>
+                <div class="form-group"><b>
+                    @Html.LabelFor(model => model.SessionAmount, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SessionAmount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SessionAmount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br>
+                <div class="form-group"><b>
+                    @Html.LabelFor(model => model.SessionCount, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SessionCount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SessionCount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 align-self-center">
+                <div class="form-group">
+                    <div style="padding-top:25px">
+                        <button type="submit" value="Save" class="btn btn-success"><b>Save</b></button>
+                    </div>
+                    @*class="col-md-offset-4 col-md-10"*@
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,64 @@
+﻿@model SessionPjct.sessionstatu
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div style="padding-top:20px">
+    <h4 style="color:chocolate">Create sessionstatus</h4>
+    <hr />
+</div>
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" >
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row" style="padding-left:40px;padding-top:20px">
+            <div class="col-3">
+                <div class="form-group">
+                    <b>
+                        @Html.LabelFor(model => model.SessionStatusId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SessionStatusId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SessionStatusId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <b>
+                        @Html.LabelFor(model => model.StatusName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StatusName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StatusName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <div style="padding-top:70px">
+                        <button type="submit" value="Create" class="btn btn-success">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+        
+    </div>
+}
+
+<br>
+<div style="padding-left:40px;padding-top:40px">
+  <strong class="btn btn-outline-info">  @Html.ActionLink("Back to List", "Index")</strong>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

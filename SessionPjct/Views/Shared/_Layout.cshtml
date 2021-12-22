@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SessionINFO Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/Main.js"></script>
+
+</head>
+<body style="background-image: url('../../Images/congruent_pentagon.png'); ">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav" >
+                <li class="navbar-brand">
+                    <a class="navbar-brand" href="#"><i>DStepz</i></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" style="color:lightgrey" href="~/Sessions"><b>Session</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: lightgrey"  href="https://localhost:44321/Sessionstatus"><b>SessionStatus</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: lightgrey" href="https://localhost:44321/SessionTrxns"><b>SessionTransaction</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: lightgrey" href="https://localhost:44321/PaymentStatus"><b>PaymentStatus</b></a>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+
+    <div class="row">
+       
+        <div class="col-2" style=" height: 520px ">
+            <p style="margin-top:90px;padding-left:10px;padding-top:10px"><b>DStepz</b> makes it fast and easy for businesses to delight their customers and employees. We do this by taking a fresh approach to building and delivering software-as-a-service that’s affordable, quick to implement, and designed for the end-user</p>
+        </div>
+        <div class="col-10">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="row border-top">
+        <footer>
+            <p style="padding-left:40%">&copy; @DateTime.Now.Year - SessionINFO Application</p>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/Scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<SessionPjct.Session>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    
+        
+            <div class="row" style="padding-top:20px">
+                <div class="col-2">
+                    <h4 style="color:chocolate">Index</h4>
+                </div>
+                <div class="col-2">
+                    <strong class="btn btn-outline-warning">
+                        @Html.ActionLink("CreateNew", "Create")
+                    </strong>
+                </div>
+
+            </div>
+            <hr>
+            <br>
+            <div class="container">
+                <table class="table table-hover">
+
+                    <tr class="text-white" style="background-color: yellowgreen">
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionStart)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionEnd)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionAmount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionCount)
+                        </th>
+                        <th></th>
+                    </tr>
+
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="color:black">
+                                <b>
+                                    @Html.DisplayFor(modelItem => item.SessionName)
+                                </b>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SessionDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SessionStart)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SessionEnd)
+                            </td>
+                            <td style="color:green">
+                                <b>
+                                    @Html.DisplayFor(modelItem => item.SessionAmount)
+                                </b>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SessionCount)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.SessionId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.SessionId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.SessionId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+            
+       
+
+    
+
+
+

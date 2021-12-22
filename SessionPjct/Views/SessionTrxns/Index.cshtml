@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SessionPjct.SessionTrxn>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" style="padding-top:20px">
+    <div class="col-2">
+        <h4 style="color:chocolate">Index</h4>
+    </div>
+    <div class="col-2">
+        <strong class="btn btn-outline-warning">
+            @Html.ActionLink("CreateNew", "Create")
+        </strong>
+    </div>
+    
+</div>
+<hr>
+<br>
+<div class="container">
+    <table class="table table-hover">
+        <tr class="text-white" style="background-color: yellowgreen">
+            <th>
+                @Html.DisplayNameFor(model => model.SessionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MentorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionCount)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                   <b> @Html.DisplayFor(modelItem => item.SessionId)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MentorId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CandidateId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentStatus)
+                </td>
+                <td>
+                  <b>  @Html.DisplayFor(modelItem => item.SessionCount) </b>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SessionTrnId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SessionTrnId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SessionTrnId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
